@@ -7,3 +7,25 @@ if(menu&&links){
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
   window.addEventListener('resize',()=>{if(window.innerWidth>760)closeMenu();});
 }
+
+(()=>{
+  const version='visual-1';
+  if(document.documentElement.dataset.aihubVisual===version)return;
+  document.documentElement.dataset.aihubVisual=version;
+  ['01.css','02.css','03.css','04.css'].forEach(file=>{
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href=new URL(`visuals/${file}?v=${version}`,document.baseURI).href;
+    document.head.appendChild(link);
+  });
+  const canonical=document.querySelector('link[rel="canonical"]')?.href||location.href;
+  const path=new URL(canonical).pathname;
+  const page=path.includes('practical-ai-for-management')?'practical':
+    path.includes('ai-workflow-automation')?'automation':
+    path.includes('management-reporting-power-bi')?'reporting':
+    path.includes('/about/')||path.includes('/ro/despre/')?'about':'home';
+  const script=document.createElement('script');
+  script.src=new URL(`visuals/${page}.js?v=${version}`,document.baseURI).href;
+  script.async=false;
+  document.body.appendChild(script);
+})();
