@@ -34,7 +34,7 @@ html,body{overflow-x:clip}
   .flow-step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}
 }
 /* Use the compact navigation on tablets as well, so primary links stay comfortably tappable. */
-@media(max-width:900px){
+@media(max-width:1040px){
   .menu-btn{display:block}
   .nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:14px;background:rgba(7,16,20,.98);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}
   .nav-links.open{display:flex}
@@ -42,3 +42,12 @@ html,body{overflow-x:clip}
   .nav-cta{text-align:center;justify-content:center}
 }
 @media(max-width:760px){.nav-links{top:68px}}
+
+
+/* bilingual language switch */
+.lang-switch{display:inline-flex;align-items:center;padding:3px;border:1px solid var(--line2);border-radius:10px;background:rgba(13,26,32,.82);gap:2px;flex:0 0 auto}
+.lang-switch a{display:grid;place-items:center;min-width:34px;height:30px;padding:0 8px!important;border-radius:7px;color:#93a8ad!important;text-decoration:none;font-size:.72rem!important;font-weight:650;letter-spacing:.06em;line-height:1}
+.lang-switch a:hover{color:var(--text)!important;background:rgba(255,255,255,.04)}
+.lang-switch a.active{background:var(--mint);color:var(--dark)!important}
+@media(max-width:980px){.lang-switch a{min-width:32px;padding:0 7px!important}}
+@media(max-width:760px){.lang-switch{align-self:flex-start;margin:3px 14px 5px}.lang-switch a{padding:0 10px!important;min-width:42px;font-size:.78rem!important}}
