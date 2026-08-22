@@ -1,0 +1,80 @@
+/* About AIHub — founder/proof rebalance */
+.page-about .proof-strip{
+  display:grid;
+  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  gap:24px 28px;
+  align-items:stretch;
+}
+.page-about .about-experience-map{
+  grid-column:1;
+  margin:0;
+  min-height:250px;
+}
+.page-about .proof-intro{
+  grid-column:2;
+  padding:24px 8px 24px 4px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.page-about .proof-intro h3{
+  margin-bottom:12px;
+}
+.page-about .proof-intro .sub{
+  max-width:none;
+}
+.page-about .proof-grid{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:2px;
+}
+.page-about .proof-item{
+  height:100%;
+  display:grid;
+  grid-template-rows:auto minmax(3em,auto) 1fr;
+  align-content:start;
+}
+.page-about .proof-item > b{
+  min-height:3em;
+  display:flex;
+  align-items:flex-start;
+  margin-bottom:8px;
+}
+.page-about .proof-item > span:not(.proof-icon){
+  display:block;
+  align-self:start;
+}
+.page-about .credentials-wrap{
+  grid-column:1 / -1;
+  margin-top:10px;
+}
+@media(max-width:980px){
+  .page-about .proof-strip{
+    grid-template-columns:1fr;
+  }
+  .page-about .about-experience-map,
+  .page-about .proof-intro,
+  .page-about .proof-grid,
+  .page-about .credentials-wrap{
+    grid-column:1;
+  }
+  .page-about .proof-intro{
+    padding:4px 0 8px;
+  }
+  .page-about .proof-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:760px){
+  .page-about .proof-grid{
+    grid-template-columns:1fr;
+  }
+  .page-about .proof-item{
+    grid-template-rows:auto auto 1fr;
+  }
+  .page-about .proof-item > b{
+    min-height:0;
+  }
+}
