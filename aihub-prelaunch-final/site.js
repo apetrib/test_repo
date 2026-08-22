@@ -9,7 +9,7 @@ if(menu&&links){
 }
 
 (()=>{
-  const version='visual-5';
+  const version='visual-6';
   if(document.documentElement.dataset.aihubVisual===version)return;
   document.documentElement.dataset.aihubVisual=version;
   ['01.css','02.css','03.css','04.css','05.css','06.css'].forEach(file=>{
@@ -31,6 +31,12 @@ if(menu&&links){
   if(page==='practical'){
     const fixes=document.createElement('script');
     fixes.src=new URL(`visuals/practical-fixes.js?v=${version}`,document.baseURI).href;
+    fixes.async=false;
+    document.body.appendChild(fixes);
+  }
+  if(page==='home'){
+    const fixes=document.createElement('script');
+    fixes.src=new URL(`visuals/home-fixes.js?v=${version}`,document.baseURI).href;
     fixes.async=false;
     document.body.appendChild(fixes);
   }
