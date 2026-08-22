@@ -27,13 +27,11 @@ if(menu&&links){
   const script=document.createElement('script');
   script.src=new URL(`visuals/${page}.js?v=${version}`,document.baseURI).href;
   script.async=false;
-  if(page==='practical'){
-    script.addEventListener('load',()=>{
-      const fixes=document.createElement('script');
-      fixes.src=new URL(`visuals/practical-fixes.js?v=${version}`,document.baseURI).href;
-      fixes.async=false;
-      document.body.appendChild(fixes);
-    });
-  }
   document.body.appendChild(script);
+  if(page==='practical'){
+    const fixes=document.createElement('script');
+    fixes.src=new URL(`visuals/practical-fixes.js?v=${version}`,document.baseURI).href;
+    fixes.async=false;
+    document.body.appendChild(fixes);
+  }
 })();
