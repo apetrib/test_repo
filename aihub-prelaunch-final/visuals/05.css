@@ -1,0 +1,19 @@
+/* Homepage family-card vertical alignment */
+@media (min-width:981px){
+  .page-home .family h3{
+    min-height:3.05em;
+    display:flex;
+    align-items:flex-start;
+  }
+  .page-home .family > p{
+    min-height:5.5em;
+    margin-bottom:0;
+  }
+  .page-home .family .family-visual{
+    margin-top:18px;
+  }
+  .page-home .family .mini-flow{
+    min-height:58px;
+    align-items:flex-start;
+  }
+}
