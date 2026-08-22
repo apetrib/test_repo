@@ -9,10 +9,10 @@ if(menu&&links){
 }
 
 (()=>{
-  const version='visual-15';
+  const version='visual-16';
   if(document.documentElement.dataset.aihubVisual===version)return;
   document.documentElement.dataset.aihubVisual=version;
-  ['01.css','02.css','03.css','04.css','05.css','06.css','07.css','08.css','09.css'].forEach(file=>{
+  ['01.css','02.css','03.css','04.css','05.css','06.css','07.css','08.css','09.css','10.css'].forEach(file=>{
     const link=document.createElement('link');
     link.rel='stylesheet';
     link.href=new URL(`visuals/${file}?v=${version}`,document.baseURI).href;
@@ -24,6 +24,7 @@ if(menu&&links){
     path.includes('ai-workflow-automation')?'automation':
     path.includes('management-reporting-power-bi')?'reporting':
     path.includes('/about/')||path.includes('/ro/despre/')?'about':'home';
+  document.body.dataset.aihubPage=page;
   const script=document.createElement('script');
   script.src=new URL(`visuals/${page}.js?v=${version}`,document.baseURI).href;
   script.async=false;
