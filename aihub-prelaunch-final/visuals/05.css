@@ -17,14 +17,14 @@
     align-items:flex-start;
   }
 
-  /* Homepage recognition cards: align body-copy start without fixing card height. */
+  /* Homepage recognition cards: one shared three-line headline area. */
   .page-home .recognition .card strong{
-    min-height:72px;
+    min-height:84px;
     display:block;
-    margin-bottom:0;
+    margin-bottom:12px;
   }
   .page-home .recognition .card > p{
-    margin-top:12px;
+    margin-top:0;
   }
 }
 
