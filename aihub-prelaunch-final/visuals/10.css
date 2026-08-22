@@ -1,10 +1,12 @@
 /* Management Reporting & Power BI — isolated Reporting corrections */
 
-/* Keep the hero model label clear of the Management View node on desktop. */
+/* Keep the hero flow compact, balanced and readable on desktop. */
 @media (min-width:1041px){
   body[data-aihub-page="reporting"] .reporting-hero-map .model-node{
-    left:132px;
-    width:112px;
+    left:32%;
+    top:100px;
+    width:126px;
+    height:120px;
     z-index:4;
     overflow:visible;
   }
@@ -16,11 +18,16 @@
     padding:0 4px;
   }
   body[data-aihub-page="reporting"] .reporting-hero-map .dashboard-node{
-    right:14px;
-    width:132px;
+    left:65%;
+    right:auto;
+    top:54px;
+    width:clamp(128px,31%,148px);
+    height:150px;
     z-index:2;
   }
   body[data-aihub-page="reporting"] .reporting-hero-map .decision-node{
+    right:18px;
+    bottom:34px;
     z-index:5;
   }
 }
