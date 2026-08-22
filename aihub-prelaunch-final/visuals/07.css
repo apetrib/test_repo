@@ -1,0 +1,21 @@
+/* AI & Workflow Automation — robust recognition-card alignment */
+@media (min-width:761px){
+  .page-automation .recognition .card .num{
+    min-height:2.9em;
+    margin-bottom:18px;
+  }
+  .page-automation .recognition .card strong{
+    min-height:72px;
+    display:block;
+    margin-bottom:0;
+  }
+  .page-automation .recognition .card > p{
+    margin-top:12px;
+  }
+}
+@media (max-width:760px){
+  .page-automation .recognition .card .num,
+  .page-automation .recognition .card strong{
+    min-height:0;
+  }
+}
