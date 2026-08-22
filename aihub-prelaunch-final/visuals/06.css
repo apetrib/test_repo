@@ -1,4 +1,4 @@
-/* Practical AI page — alignment pass */
+/* Practical AI page — robust recognition-card alignment */
 @media (min-width:761px){
   .page-practical .recognition .grid-4 > .card{
     height:100%;
@@ -8,11 +8,17 @@
     margin-bottom:18px;
   }
   .page-practical .recognition .card strong{
-    min-height:6.8em;
+    min-height:72px;
     display:block;
-    margin-bottom:10px;
+    margin-bottom:0;
   }
   .page-practical .recognition .card > p{
-    margin-top:0;
+    margin-top:12px;
+  }
+}
+@media (max-width:760px){
+  .page-practical .recognition .card .num,
+  .page-practical .recognition .card strong{
+    min-height:0;
   }
 }
