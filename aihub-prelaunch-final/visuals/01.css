@@ -64,11 +64,22 @@ main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1
 .credential{
   display:grid;
   grid-template-columns:44px minmax(0,1fr);
+  grid-template-rows:auto auto;
   column-gap:16px;
-  align-items:center;
+  row-gap:3px;
+  align-items:start;
+}
+.credential > b{
+  grid-column:2;
+  grid-row:1;
+}
+.credential > span:not(.credential-icon){
+  grid-column:2;
+  grid-row:2;
 }
 .credential-icon{
-  grid-row:1/3;
+  grid-column:1;
+  grid-row:1 / span 2;
   width:44px;
   height:44px;
   flex:0 0 44px;
