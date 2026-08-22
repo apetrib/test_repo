@@ -16,15 +16,15 @@
     margin-top:12px;
   }
 
-  /* Relevant-experience strip: tighter label column, wider copy measure, vertically centered. */
+  /* Program-experience strip: balanced label column, wide copy measure, vertically centered. */
   .page-practical .credibility-note{
-    grid-template-columns:112px minmax(0,1fr);
-    gap:14px;
+    grid-template-columns:176px minmax(0,1fr);
+    gap:16px;
     align-items:center;
     padding:20px 24px;
   }
   .page-practical .credibility-note .cred-label{
-    max-width:90px;
+    max-width:160px;
     line-height:1.48;
     white-space:normal;
     align-self:center;
