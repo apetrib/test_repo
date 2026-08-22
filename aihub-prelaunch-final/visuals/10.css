@@ -1,12 +1,39 @@
 /* Management Reporting & Power BI — isolated Reporting corrections */
 
-/* Keep the hero flow compact, balanced and readable on desktop. */
-@media (min-width:1041px){
+/* Reporting hero: proportional left-to-right flow from sources to decision. */
+@media (min-width:761px){
+  body[data-aihub-page="reporting"] .reporting-hero-map{
+    display:grid;
+    grid-template-columns:minmax(58px,.68fr) minmax(96px,1fr) minmax(108px,1.12fr) minmax(66px,.68fr);
+    gap:clamp(8px,1.4vw,14px);
+    align-items:center;
+    padding:20px clamp(10px,2vw,16px) 48px;
+  }
+
+  body[data-aihub-page="reporting"] .reporting-hero-map .source-cluster,
+  body[data-aihub-page="reporting"] .reporting-hero-map .model-node,
+  body[data-aihub-page="reporting"] .reporting-hero-map .dashboard-node,
+  body[data-aihub-page="reporting"] .reporting-hero-map .decision-node{
+    position:relative;
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
+    transform:none;
+    justify-self:center;
+  }
+
+  body[data-aihub-page="reporting"] .reporting-hero-map .source-cluster{
+    width:min(100%,82px);
+    gap:6px;
+  }
+  body[data-aihub-page="reporting"] .reporting-hero-map .source-cluster span{
+    padding:6px 8px;
+  }
+
   body[data-aihub-page="reporting"] .reporting-hero-map .model-node{
-    left:32%;
-    top:100px;
-    width:126px;
-    height:120px;
+    width:min(100%,124px);
+    height:116px;
     z-index:4;
     overflow:visible;
   }
@@ -17,18 +44,26 @@
     width:100%;
     padding:0 4px;
   }
+
   body[data-aihub-page="reporting"] .reporting-hero-map .dashboard-node{
-    left:65%;
-    right:auto;
-    top:54px;
-    width:clamp(128px,31%,148px);
-    height:150px;
-    z-index:2;
+    width:min(100%,136px);
+    height:138px;
+    padding:12px;
+    z-index:3;
   }
+  body[data-aihub-page="reporting"] .reporting-hero-map .mini-bars{
+    height:42px;
+    margin:12px 0 7px;
+    gap:7px;
+  }
+  body[data-aihub-page="reporting"] .reporting-hero-map .dashboard-node svg{
+    height:34px;
+  }
+
   body[data-aihub-page="reporting"] .reporting-hero-map .decision-node{
-    right:18px;
-    bottom:34px;
-    z-index:5;
+    width:min(100%,80px);
+    height:74px;
+    z-index:4;
   }
 }
 
