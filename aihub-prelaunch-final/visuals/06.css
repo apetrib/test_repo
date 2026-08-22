@@ -1,0 +1,18 @@
+/* Practical AI page — alignment pass */
+@media (min-width:761px){
+  .page-practical .recognition .grid-4 > .card{
+    height:100%;
+  }
+  .page-practical .recognition .card .num{
+    min-height:2.9em;
+    margin-bottom:18px;
+  }
+  .page-practical .recognition .card strong{
+    min-height:6.8em;
+    display:block;
+    margin-bottom:10px;
+  }
+  .page-practical .recognition .card > p{
+    margin-top:0;
+  }
+}
