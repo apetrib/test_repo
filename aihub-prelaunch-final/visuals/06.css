@@ -15,10 +15,32 @@
   .page-practical .recognition .card > p{
     margin-top:12px;
   }
+
+  /* Relevant-experience strip: tighter label column, wider copy measure, vertically centered. */
+  .page-practical .credibility-note{
+    grid-template-columns:112px minmax(0,1fr);
+    gap:14px;
+    align-items:center;
+    padding:20px 24px;
+  }
+  .page-practical .credibility-note .cred-label{
+    max-width:90px;
+    line-height:1.48;
+    white-space:normal;
+    align-self:center;
+  }
+  .page-practical .credibility-note > p{
+    max-width:none;
+    margin:0;
+    align-self:center;
+  }
 }
 @media (max-width:760px){
   .page-practical .recognition .card .num,
   .page-practical .recognition .card strong{
     min-height:0;
+  }
+  .page-practical .credibility-note .cred-label{
+    max-width:none;
   }
 }
