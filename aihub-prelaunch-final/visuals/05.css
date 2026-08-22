@@ -1,12 +1,12 @@
 /* Homepage family-card vertical alignment */
 @media (min-width:981px){
   .page-home .family h3{
-    min-height:3.05em;
+    min-height:4em;
     display:flex;
     align-items:flex-start;
   }
   .page-home .family > p{
-    min-height:5.5em;
+    min-height:6.5em;
     margin-bottom:0;
   }
   .page-home .family .family-visual{
