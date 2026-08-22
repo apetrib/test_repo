@@ -40,8 +40,10 @@
   }
 
   const addIcons=(selector,list,cls)=>[...document.querySelectorAll(selector)].forEach((el,i)=>{if(!el.querySelector('.'+cls)){const s=document.createElement('span');s.className=cls;s.innerHTML=list[i%list.length];el.prepend(s)}});
-  addIcons('.proof-item',[icons.management,icons.analytics,icons.data,icons.ai,icons.screen,icons.product],'proof-icon');
-  addIcons('.credential',[icons.ai,icons.delivery,icons.data,icons.shield,icons.analytics,icons.management],'credential-icon');
+  const proofIcons=[icons.management,icons.analytics,icons.data,icons.ai,icons.screen,icons.product];
+  addIcons('.proof-item',proofIcons,'proof-icon');
+  // Credentials deliberately reuse the same balanced 24×24 glyph family as the proof cards above.
+  addIcons('.credential',[icons.ai,icons.management,icons.data,icons.screen,icons.analytics,icons.product],'credential-icon');
   [...sections[2]?.querySelectorAll('.card')||[]].forEach((el,i)=>{if(!el.querySelector('.card-icon')){const d=document.createElement('div');d.className='card-icon';d.innerHTML=[icons.compass,icons.delivery,icons.workflow][i%3];el.prepend(d)}});
   sections[3]?.querySelector('.principle')?.classList.add('visual-principle');
   sections[4]?.querySelector('.final-box')?.classList.add('visual-final-box');
