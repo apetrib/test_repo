@@ -16,4 +16,20 @@
     min-height:58px;
     align-items:flex-start;
   }
+
+  /* Homepage recognition cards: align body-copy start without fixing card height. */
+  .page-home .recognition .card strong{
+    min-height:72px;
+    display:block;
+    margin-bottom:0;
+  }
+  .page-home .recognition .card > p{
+    margin-top:12px;
+  }
+}
+
+@media (max-width:760px){
+  .page-home .recognition .card strong{
+    min-height:0;
+  }
 }
