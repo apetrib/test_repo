@@ -1,0 +1,44 @@
+/* Management Reporting & Power BI — isolated Reporting corrections */
+
+/* Keep the hero model label clear of the Management View node on desktop. */
+@media (min-width:1041px){
+  body[data-aihub-page="reporting"] .reporting-hero-map .model-node{
+    left:132px;
+    width:112px;
+    z-index:4;
+    overflow:visible;
+  }
+  body[data-aihub-page="reporting"] .reporting-hero-map .model-node > b{
+    position:relative;
+    z-index:5;
+    display:block;
+    width:100%;
+    padding:0 4px;
+  }
+  body[data-aihub-page="reporting"] .reporting-hero-map .dashboard-node{
+    right:14px;
+    width:132px;
+    z-index:2;
+  }
+  body[data-aihub-page="reporting"] .reporting-hero-map .decision-node{
+    z-index:5;
+  }
+}
+
+/* Reporting recognition cards: shared headline area on desktop/tablet. */
+@media (min-width:761px){
+  body[data-aihub-page="reporting"] .recognition .card strong{
+    min-height:72px;
+    display:block;
+    margin-bottom:0;
+  }
+  body[data-aihub-page="reporting"] .recognition .card > p{
+    margin-top:12px;
+  }
+}
+
+@media (max-width:760px){
+  body[data-aihub-page="reporting"] .recognition .card strong{
+    min-height:0;
+  }
+}
