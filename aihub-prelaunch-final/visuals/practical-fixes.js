@@ -26,5 +26,19 @@
     }
   }
 
-  // The supporting right-column descriptions in Practical Territory and Format stay visible.
+  // Keep the supporting right-column descriptions visible; tighten only the requested English copy.
+  if(!ro){
+    document.querySelectorAll('.section-head').forEach(head=>{
+      const eyebrow=head.querySelector('.eyebrow')?.textContent.trim();
+      if(eyebrow==='Practical territory'){
+        const supporting=head.querySelector(':scope > p');
+        if(supporting) supporting.textContent='Examples are adapted to each team’s roles, workflows and decision needs — not to a generic list of vendor features.';
+      }
+    });
+
+    const experience=document.querySelector('.page-practical .credibility-note > p');
+    if(experience){
+      experience.innerHTML='The program combines management and analytics experience with applied AI / ML: <b>Machine Learning in Business — MIT Sloan</b>, segmentation, recommendation and prediction work, plus experience training teams and enabling data science platforms such as Dataiku.';
+    }
+  }
 })();
