@@ -62,8 +62,6 @@ main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1
 .proof-icon,.credential-icon{
   width:34px;
   height:34px;
-  display:grid;
-  place-items:center;
   line-height:0;
   padding:0;
   border:1px solid rgba(98,216,255,.2);
@@ -71,15 +69,11 @@ main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1
   background:rgba(98,216,255,.055);
 }
 .proof-icon{margin-bottom:12px}
-.proof-icon svg,.credential-icon svg{
+.proof-icon svg{
   display:block;
   width:18px;
   height:18px;
   margin:0;
-  padding:0;
-  position:static;
-  inset:auto;
-  transform:none;
 }
 .credential{
   display:grid;
@@ -101,5 +95,17 @@ main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1
   grid-column:1;
   grid-row:1 / span 2;
   place-self:center;
+  position:relative;
   margin:0;
+}
+.credential-icon svg{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:18px;
+  height:18px;
+  transform:translate(-50%,-50%);
+  display:block;
+  margin:0;
+  padding:0;
 }
