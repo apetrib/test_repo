@@ -59,8 +59,28 @@ main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1
 .card-icon svg{width:21px;height:21px}
 .recognition .card .card-icon{margin-bottom:18px}
 .recognition .card .num{margin-bottom:18px}
-.proof-icon{width:34px;height:34px;border:1px solid rgba(98,216,255,.2);border-radius:10px;background:rgba(98,216,255,.055);margin-bottom:12px}
-.proof-icon svg{width:18px;height:18px}
+.proof-icon,.credential-icon{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  line-height:0;
+  padding:0;
+  border:1px solid rgba(98,216,255,.2);
+  border-radius:10px;
+  background:rgba(98,216,255,.055);
+}
+.proof-icon{margin-bottom:12px}
+.proof-icon svg,.credential-icon svg{
+  display:block;
+  width:18px;
+  height:18px;
+  margin:0;
+  padding:0;
+  position:static;
+  inset:auto;
+  transform:none;
+}
 .credential{
   display:grid;
   grid-template-columns:44px minmax(0,1fr);
@@ -80,27 +100,6 @@ main::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1
 .credential-icon{
   grid-column:1;
   grid-row:1 / span 2;
-  width:44px;
-  height:44px;
-  flex:0 0 44px;
-  display:grid;
-  place-items:center;
-  line-height:0;
-  padding:0;
+  place-self:center;
   margin:0;
-  position:static;
-  align-self:center;
-  border-radius:10px;
-  background:rgba(115,242,198,.06);
-  border:1px solid rgba(115,242,198,.2);
-}
-.credential-icon svg{
-  display:block;
-  width:18px;
-  height:18px;
-  margin:0;
-  padding:0;
-  position:static;
-  inset:auto;
-  transform:none;
 }
