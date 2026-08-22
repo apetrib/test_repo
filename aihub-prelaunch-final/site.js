@@ -9,7 +9,7 @@ if(menu&&links){
 }
 
 (()=>{
-  const version='visual-13';
+  const version='visual-14';
   if(document.documentElement.dataset.aihubVisual===version)return;
   document.documentElement.dataset.aihubVisual=version;
   ['01.css','02.css','03.css','04.css','05.css','06.css','07.css','08.css','09.css'].forEach(file=>{
