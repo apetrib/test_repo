@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aihub.ro/sitemap.xml
