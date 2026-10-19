@@ -9,7 +9,7 @@ if(menu&&links){
 }
 
 (()=>{
-  const version='visual-23';
+  const version='visual-24';
   if(document.documentElement.dataset.aihubVisual===version)return;
   document.documentElement.dataset.aihubVisual=version;
   ['01.css','02.css','03.css','04.css','05.css','06.css','07.css','08.css','09.css','10.css'].forEach(file=>{
@@ -24,6 +24,24 @@ if(menu&&links){
     path.includes('ai-workflow-automation')?'automation':
     path.includes('management-reporting-power-bi')?'reporting':
     path.includes('/about/')||path.includes('/ro/despre/')?'about':'home';
+  // Romanian is the default homepage language, with explicit EN selection remembered.
+  // There is no automatic browser-locale or IP-based language detection.
+  document.querySelectorAll('.lang-switch a[lang]').forEach(link=>{
+    link.addEventListener('click',()=>{
+      try{localStorage.setItem('aihub-language',link.getAttribute('lang'));}catch(_){}
+    });
+  });
+  if(page==='home' && document.documentElement.lang==='en'){
+    let chosenLanguage='';
+    try{chosenLanguage=localStorage.getItem('aihub-language')||'';}catch(_){}
+    if(chosenLanguage!=='en'){
+      const target=new URL(document.querySelector('base')?'ro/index.html':'ro/',document.baseURI);
+      target.search=location.search;
+      target.hash=location.hash;
+      location.replace(target.href);
+      return;
+    }
+  }
   document.body.dataset.aihubPage=page;
   const script=document.createElement('script');
   script.src=new URL(`visuals/${page}.js?v=${version}`,document.baseURI).href;
