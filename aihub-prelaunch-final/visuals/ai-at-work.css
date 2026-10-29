@@ -1,0 +1,303 @@
+/* AI at Work — only the new Romanian SMB entry page. Uses AIHub's existing tokens and components. */
+.page-ai-at-work .aiat-hero{
+  padding:clamp(64px,7vw,92px) 0 clamp(66px,8vw,94px);
+  background:radial-gradient(ellipse at 90% 18%,rgba(98,216,255,.075),transparent 52%);
+}
+.page-ai-at-work .aiat-hero-inner{max-width:1180px}
+.page-ai-at-work .aiat-hero h1{
+  max-width:1020px;
+  font-size:clamp(3rem,6.1vw,5.9rem);
+  line-height:.99;
+  letter-spacing:-.065em;
+  margin:22px 0 24px;
+  text-wrap:balance;
+}
+.page-ai-at-work .aiat-hero .kicker{
+  max-width:860px;
+  font-size:clamp(1.15rem,2.1vw,1.55rem);
+  line-height:1.4;
+  margin:0 0 20px;
+}
+.page-ai-at-work .aiat-hero .lead{max-width:870px}
+.page-ai-at-work .aiat-hero-context{
+  max-width:850px;
+  margin:22px 0 0;
+  color:#b8c9cb;
+  font-size:1.03rem;
+  line-height:1.7;
+}
+.page-ai-at-work .aiat-emphasis{
+  max-width:870px;
+  margin:25px 0 0;
+  padding:12px 0 12px 20px;
+  border-left:2px solid var(--mint);
+  color:#e5f3ef;
+  font-size:1.05rem;
+  line-height:1.65;
+}
+.page-ai-at-work .aiat-hero .actions{margin-top:26px}
+.page-ai-at-work .aiat-cta-note{max-width:770px}
+.page-ai-at-work .aiat-section-head{
+  display:block;
+  max-width:1030px;
+  margin-bottom:30px;
+}
+.page-ai-at-work .aiat-section-head h2{max-width:1010px;text-wrap:balance}
+.page-ai-at-work .aiat-question-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.page-ai-at-work .aiat-question-grid li{
+  position:relative;
+  min-width:0;
+  padding:23px 25px 23px 46px;
+  border:1px solid rgba(55,99,111,.52);
+  border-radius:18px;
+  background:linear-gradient(155deg,rgba(17,37,45,.9),rgba(7,18,23,.95));
+  color:#e0eced;
+  font-weight:650;
+  font-size:1.02rem;
+  line-height:1.55;
+}
+.page-ai-at-work .aiat-question-grid li::before{
+  content:"";
+  position:absolute;
+  top:33px;
+  left:23px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--mint);
+  box-shadow:0 0 12px rgba(115,242,198,.25);
+}
+.page-ai-at-work .aiat-recognition-note{
+  max-width:900px;
+  margin-top:25px;
+  color:#aebfc2;
+  line-height:1.68;
+}
+.page-ai-at-work .aiat-recognition-note p{margin:0 0 8px}
+.page-ai-at-work .aiat-recognition-note strong{color:#e8f4f1}
+.page-ai-at-work .aiat-service-grid{align-items:stretch}
+.page-ai-at-work .aiat-service-card{height:100%;min-width:0}
+.page-ai-at-work .aiat-card-icon{
+  margin-bottom:19px;
+  color:var(--mint);
+}
+.page-ai-at-work .aiat-card-icon svg{width:21px;height:21px}
+.page-ai-at-work .aiat-service-card .num{
+  margin-bottom:14px;
+  color:var(--cyan);
+}
+.page-ai-at-work .aiat-service-card h3{
+  max-width:340px;
+  font-size:clamp(1.24rem,1.5vw,1.45rem);
+  line-height:1.27;
+  margin:0 0 16px;
+}
+.page-ai-at-work .aiat-service-card p{
+  margin:0 0 14px;
+  color:#b6c9cc;
+  font-size:.96rem;
+  line-height:1.68;
+}
+.page-ai-at-work .aiat-service-card p:last-child{margin-bottom:0}
+.page-ai-at-work .aiat-after-cards{
+  max-width:940px;
+  margin:27px 0 0;
+  padding-left:18px;
+  border-left:2px solid rgba(115,242,198,.7);
+  color:#dceee9;
+  font-size:1.02rem;
+  line-height:1.7;
+}
+.page-ai-at-work .aiat-examples-grid .card{
+  min-width:0;
+  padding:26px;
+}
+.page-ai-at-work .aiat-example .num{margin-bottom:12px}
+.page-ai-at-work .aiat-example h3{
+  font-size:1.37rem;
+  line-height:1.3;
+  margin-bottom:10px;
+}
+.page-ai-at-work .aiat-example p{
+  color:#b4c6c9;
+  margin:0;
+  line-height:1.67;
+}
+.page-ai-at-work .aiat-subtle-note{
+  margin:20px 0 0;
+  max-width:900px;
+  color:#95afb4;
+  line-height:1.65;
+  font-size:.92rem;
+}
+.page-ai-at-work .aiat-process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  list-style:none;
+  gap:14px;
+  margin:0;
+  padding:0;
+}
+.page-ai-at-work .aiat-process-step{
+  min-width:0;
+  height:100%;
+  padding:24px;
+  border-radius:20px;
+}
+.page-ai-at-work .aiat-step-index{
+  display:block;
+  margin-bottom:19px;
+  color:var(--mint);
+  font-size:.8rem;
+  letter-spacing:.12em;
+  font-weight:900;
+}
+.page-ai-at-work .aiat-process-step h3{
+  font-size:1.2rem;
+  line-height:1.3;
+  margin-bottom:12px;
+}
+.page-ai-at-work .aiat-process-step p{
+  margin:0;
+  color:#afc3c6;
+  line-height:1.62;
+  font-size:.93rem;
+}
+.page-ai-at-work .aiat-principle{gap:38px}
+.page-ai-at-work .aiat-principle h2{
+  font-size:clamp(2rem,3.1vw,3.35rem);
+  line-height:1.08;
+}
+.page-ai-at-work .aiat-approach-copy p{
+  color:#b9ced0;
+  line-height:1.7;
+  margin:0 0 16px;
+}
+.page-ai-at-work .aiat-approach-copy p:last-child{margin:0;color:#e8f6f0}
+.page-ai-at-work .aiat-final-box h2{max-width:890px}
+.page-ai-at-work .aiat-final-box>p:not(.micro):not(.aiat-signature){
+  max-width:815px;
+  color:#b9cacc;
+  line-height:1.72;
+  margin:15px 0 0;
+}
+.page-ai-at-work .aiat-final-box .actions{margin-top:30px}
+.page-ai-at-work .aiat-final-box .micro{margin-top:15px}
+.page-ai-at-work .aiat-signature{
+  margin:26px 0 0;
+  color:var(--mint);
+  font-size:.88rem;
+  font-weight:800;
+  letter-spacing:.015em;
+}
+.page-ai-at-work .aiat-skip{
+  position:fixed;
+  z-index:100;
+  left:12px;
+  top:-80px;
+  padding:10px 16px;
+  background:#0d252a;
+  color:#f6fff9;
+  border-radius:12px;
+}
+.page-ai-at-work .aiat-skip:focus{top:8px}
+.page-ai-at-work .aiat-dialog{
+  width:min(560px,calc(100% - 24px));
+  max-height:calc(100dvh - 28px);
+  padding:0;
+  border:1px solid rgba(100,203,196,.4);
+  border-radius:24px;
+  background:linear-gradient(160deg,#0d252c,#07151b);
+  box-shadow:0 30px 110px rgba(0,0,0,.72);
+  color:var(--text);
+  overflow-y:auto;
+}
+.page-ai-at-work .aiat-dialog::backdrop{background:rgba(1,8,12,.78);backdrop-filter:blur(6px)}
+.page-ai-at-work .aiat-dialog-inner{padding:clamp(20px,3.5vw,32px)}
+.page-ai-at-work .aiat-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.page-ai-at-work .aiat-dialog .eyebrow{font-size:.68rem}
+.page-ai-at-work .aiat-dialog h2{
+  margin:20px 0 12px;
+  font-size:clamp(1.6rem,3vw,2.45rem);
+  line-height:1.1;
+}
+.page-ai-at-work .aiat-dialog p{color:#abbfc2;line-height:1.5}
+.page-ai-at-work .aiat-close{
+  min-width:44px;
+  min-height:44px;
+  border:1px solid var(--line2);
+  border-radius:12px;
+  background:rgba(8,20,27,.8);
+  color:var(--text);
+  font-size:1.5rem;
+  cursor:pointer;
+}
+.page-ai-at-work .aiat-dialog form{margin-top:20px}
+.page-ai-at-work .aiat-field{margin-bottom:14px}
+.page-ai-at-work .aiat-field label{
+  display:block;
+  margin-bottom:6px;
+  color:#dcebea;
+  font-weight:750;
+  font-size:.91rem;
+  line-height:1.5;
+}
+.page-ai-at-work .aiat-field label span{color:var(--mint)}
+.page-ai-at-work .aiat-field input,
+.page-ai-at-work .aiat-field textarea{
+  display:block;
+  width:100%;
+  min-height:45px;
+  box-sizing:border-box;
+  padding:10px 13px;
+  border:1px solid #37616a;
+  border-radius:11px;
+  background:#07161c;
+  color:var(--text);
+  font:inherit;
+  font-size:1rem;
+}
+.page-ai-at-work .aiat-field textarea{min-height:116px;resize:vertical}
+.page-ai-at-work .aiat-field input:focus,
+.page-ai-at-work .aiat-field textarea:focus{outline:2px solid var(--mint);outline-offset:2px}
+.page-ai-at-work .aiat-form-disclosure{
+  font-size:.82rem;
+  margin:12px 0 18px;
+}
+.page-ai-at-work .aiat-form-actions .btn{width:100%;cursor:pointer}
+.page-ai-at-work .aiat-form-status{
+  margin:12px 0 0;
+  min-height:0;
+  font-size:.85rem;
+  line-height:1.55;
+}
+@media(max-width:1040px){
+  .page-ai-at-work .aiat-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .page-ai-at-work .aiat-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .page-ai-at-work .aiat-service-card:last-child{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .page-ai-at-work .aiat-hero{padding:56px 0 62px}
+  .page-ai-at-work .aiat-hero h1{font-size:clamp(2.9rem,10vw,4.35rem);text-wrap:initial}
+  .page-ai-at-work .aiat-hero-context{font-size:1rem}
+  .page-ai-at-work .aiat-question-grid,
+  .page-ai-at-work .aiat-service-grid,
+  .page-ai-at-work .aiat-process-grid,
+  .page-ai-at-work .aiat-examples-grid{grid-template-columns:1fr}
+  .page-ai-at-work .aiat-service-card:last-child{grid-column:auto}
+  .page-ai-at-work .aiat-question-grid li{padding:19px 21px 19px 42px}
+  .page-ai-at-work .aiat-question-grid li::before{top:30px;left:20px}
+  .page-ai-at-work .aiat-process-step{height:auto}
+  .page-ai-at-work .aiat-principle{gap:22px}
+  .page-ai-at-work .aiat-dialog{border-radius:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .page-ai-at-work .aiat-dialog::backdrop{backdrop-filter:none}
+}
