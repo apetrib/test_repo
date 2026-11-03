@@ -22,6 +22,427 @@
 <meta content="https://aihub.ro/og-aihub.png" name="twitter:image"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="styles.css" rel="stylesheet"/><link href="visuals/ai-at-work-nav.css?v=nav-1" rel="stylesheet"/>
+<!-- Keep homepage layout and SVG sizing available before JavaScript: preview CDN can delay runtime CSS. -->
+<style id="home-refresh-styles">
+/* Homepage RO refresh — visual experiment only in ai-at-work-preview.
+   Scope all rules to body.page-home-refresh so existing offer/EN pages stay unchanged. */
+.page-home-refresh{
+  background:#061319;
+  color:var(--text);
+}
+.page-home-refresh .home-refresh-hero{
+  position:relative;
+  padding:clamp(62px,6.5vw,92px) 0 clamp(64px,7vw,96px);
+  background:
+    radial-gradient(ellipse at 80% 55%,rgba(18,146,123,.16),transparent 40%),
+    radial-gradient(ellipse at 35% 0%,rgba(31,94,104,.13),transparent 55%),
+    linear-gradient(130deg,#071720 0%,#081e25 58%,#062a2a 100%);
+  border-bottom:1px solid rgba(62,131,132,.3);
+}
+.page-home-refresh .home-refresh-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(rgba(91,192,177,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(91,192,177,.022) 1px,transparent 1px);
+  background-size:40px 40px;
+  opacity:.7;
+  pointer-events:none;
+}
+.page-home-refresh .home-refresh-hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(370px,.94fr);
+  gap:clamp(28px,4.5vw,65px);
+  align-items:center;
+}
+.page-home-refresh .home-refresh-intro{min-width:0;position:relative;z-index:2}
+.page-home-refresh .home-refresh-intro .taxonomy{
+  font-size:.71rem;
+  letter-spacing:.19em;
+}
+.page-home-refresh .home-refresh-intro h1{
+  max-width:680px;
+  margin:22px 0 24px;
+  font-size:clamp(2.8rem,4.2vw,4.5rem);
+  line-height:1.055;
+  letter-spacing:-.059em;
+  font-weight:850;
+  text-wrap:balance;
+}
+.page-home-refresh .home-refresh-intro .lead{
+  max-width:540px;
+  font-size:clamp(1.05rem,1.35vw,1.22rem);
+  line-height:1.65;
+  font-weight:450;
+  color:#bbd2d2;
+}
+.page-home-refresh .home-refresh-actions{gap:12px;margin-top:29px}
+.page-home-refresh .home-refresh-actions .btn{
+  min-height:48px;
+  padding:12px 18px;
+}
+.page-home-refresh .home-refresh-actions .btn span,
+.page-home-refresh .home-refresh-final>.btn span{
+  display:inline-block;
+  margin-left:9px;
+  font-size:1.2rem;
+  line-height:1;
+}
+.page-home-refresh .home-refresh-actions .btn-secondary{
+  border-color:rgba(115,242,198,.4);
+  background:rgba(5,25,30,.65);
+  color:#d1f0e7;
+}
+.page-home-refresh .home-refresh-promise{
+  margin:21px 0 0;
+  color:#97c7c0;
+  font-size:.85rem;
+  letter-spacing:.01em;
+}
+.page-home-refresh .home-refresh-art{
+  position:relative;
+  width:100%;
+  min-width:0;
+  max-width:525px;
+  height:clamp(300px,27vw,375px);
+  justify-self:end;
+  isolation:isolate;
+}
+.page-home-refresh .home-refresh-art-glow{
+  position:absolute;
+  width:95%;
+  height:94%;
+  inset:3% 2%;
+  background:radial-gradient(ellipse at 61% 60%,rgba(95,238,193,.27),transparent 61%);
+  filter:blur(27px);
+  z-index:-1;
+}
+.page-home-refresh .home-refresh-art-panel{
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid rgba(111,236,206,.48);
+  border-radius:25px;
+  background:
+    linear-gradient(135deg,rgba(137,245,217,.14),transparent 48%),
+    linear-gradient(165deg,rgba(11,91,95,.92),rgba(7,43,54,.94));
+  box-shadow:0 28px 70px rgba(0,0,0,.29),inset 0 1px 0 rgba(255,255,255,.09);
+}
+.page-home-refresh .home-refresh-art-panel::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(155deg,rgba(205,255,245,.095),transparent 50%);
+  pointer-events:none;
+}
+.page-home-refresh .home-refresh-art-panel-mark{
+  display:block;
+  width:42%;
+  height:6px;
+  margin:24px 0 0 24px;
+  border-radius:9px;
+  background:rgba(176,247,230,.23);
+}
+.page-home-refresh .home-refresh-art-panel-back{
+  right:4%;
+  top:2%;
+  width:65%;
+  height:73%;
+  transform:rotate(-5deg);
+}
+.page-home-refresh .home-refresh-art-bars{
+  display:flex;
+  align-items:flex-end;
+  gap:11px;
+  height:59%;
+  margin:14px 32px 20px;
+  padding:0 0 10px;
+  border-bottom:1px solid rgba(151,238,217,.23);
+}
+.page-home-refresh .home-refresh-art-bars i{
+  width:20%;
+  min-width:8px;
+  display:block;
+  border-radius:7px 7px 3px 3px;
+  background:linear-gradient(0deg,rgba(35,145,150,.62),rgba(113,242,188,.9));
+  box-shadow:0 0 22px rgba(88,247,189,.1);
+}
+.page-home-refresh .home-refresh-art-bars i:nth-child(1){height:31%}
+.page-home-refresh .home-refresh-art-bars i:nth-child(2){height:48%}
+.page-home-refresh .home-refresh-art-bars i:nth-child(3){height:69%}
+.page-home-refresh .home-refresh-art-bars i:nth-child(4){height:89%}
+.page-home-refresh .home-refresh-art-lines{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin:0 0 0 32px;
+}
+.page-home-refresh .home-refresh-art-lines i{
+  height:6px;
+  width:57%;
+  background:rgba(153,233,217,.13);
+  border-radius:7px;
+}
+.page-home-refresh .home-refresh-art-lines i:nth-child(2){width:32%}
+.page-home-refresh .home-refresh-art-panel-front{
+  left:7%;
+  top:24%;
+  width:61%;
+  height:70%;
+  transform:rotate(5deg);
+  background:
+    linear-gradient(155deg,rgba(171,255,233,.22),transparent 45%),
+    linear-gradient(160deg,rgba(12,94,101,.95),rgba(6,47,57,.96));
+}
+.page-home-refresh .home-refresh-art-panel-front svg{
+  display:block;
+  align-self:center;
+  width:66%;
+  max-height:65%;
+  margin:auto 0 0;
+  filter:drop-shadow(0 0 14px rgba(80,231,191,.24));
+}
+.page-home-refresh .home-refresh-art-micro-bars{
+  display:flex;
+  gap:7px;
+  align-items:flex-end;
+  height:33px;
+  margin:-6px 24px 18px;
+}
+.page-home-refresh .home-refresh-art-micro-bars i{
+  height:7px;
+  width:25%;
+  border-radius:6px;
+  background:rgba(147,242,219,.25);
+}
+.page-home-refresh .home-refresh-art-micro-bars i:nth-child(2){width:36%}
+.page-home-refresh .home-refresh-art-micro-bars i:nth-child(3){width:18%}
+.page-home-refresh .home-refresh-art-sheen{
+  position:absolute;
+  right:0;
+  bottom:0;
+  height:38%;
+  width:40%;
+  background:radial-gradient(ellipse,rgba(58,211,170,.12),transparent 70%);
+  pointer-events:none;
+}
+.page-home-refresh .home-refresh-offers{
+  padding:clamp(52px,5vw,75px) 0 clamp(40px,4.8vw,65px);
+  background:linear-gradient(180deg,#061920 0%,#06161b 100%);
+  border-top:none;
+}
+.page-home-refresh .home-refresh-section-intro{
+  max-width:900px;
+  margin:0 0 28px;
+}
+.page-home-refresh .home-refresh-section-intro .eyebrow{font-size:.68rem}
+.page-home-refresh .home-refresh-section-intro h2{
+  max-width:840px;
+  margin:12px 0 0;
+  font-size:clamp(1.55rem,2.35vw,2.45rem);
+  line-height:1.2;
+  letter-spacing:-.046em;
+  font-weight:790;
+  text-wrap:balance;
+}
+.page-home-refresh .home-refresh-offer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.page-home-refresh .home-refresh-offer-card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  min-height:235px;
+  padding:27px 26px 24px;
+  border:1px solid rgba(42,113,115,.56);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(75,197,164,.105),transparent 45%),
+    linear-gradient(155deg,rgba(9,40,47,.86),rgba(6,27,33,.94));
+  box-shadow:0 16px 45px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.028);
+  text-decoration:none;
+  color:var(--text);
+  transition:border-color .18s ease,transform .18s ease,background-color .18s ease;
+}
+.page-home-refresh .home-refresh-offer-card:hover,
+.page-home-refresh .home-refresh-offer-card:focus-visible{
+  transform:translateY(-3px);
+  border-color:rgba(105,240,191,.67);
+  outline:none;
+}
+.page-home-refresh .home-refresh-icon{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  margin-bottom:19px;
+  border:1px solid rgba(109,241,192,.22);
+  border-radius:13px;
+  background:rgba(98,217,170,.075);
+  color:var(--mint);
+}
+.page-home-refresh .home-refresh-icon svg{width:24px;height:24px;display:block}
+.page-home-refresh .home-refresh-offer-card h3{
+  margin:0 0 12px;
+  font-size:clamp(1.16rem,1.45vw,1.43rem);
+  line-height:1.27;
+  letter-spacing:-.028em;
+}
+.page-home-refresh .home-refresh-offer-card p{
+  max-width:290px;
+  margin:0;
+  color:#a9c4c7;
+  line-height:1.58;
+  font-size:.94rem;
+}
+.page-home-refresh .home-refresh-card-link{
+  margin-top:auto;
+  padding-top:17px;
+  font-weight:730;
+  font-size:.82rem;
+  color:var(--mint);
+}
+.page-home-refresh .home-refresh-card-link span{
+  display:inline-block;
+  font-size:1rem;
+  margin-left:5px;
+  transition:transform .18s ease;
+}
+.page-home-refresh .home-refresh-offer-card:hover .home-refresh-card-link span{transform:translateX(3px)}
+.page-home-refresh .home-refresh-trust{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  list-style:none;
+  margin:34px 0 0;
+  padding:0 6px;
+}
+.page-home-refresh .home-refresh-trust li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:.89rem;
+  font-weight:570;
+  color:#bbd3cc;
+  line-height:1.42;
+}
+.page-home-refresh .home-refresh-trust svg{
+  display:block;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  color:var(--mint);
+}
+.page-home-refresh .home-refresh-closing{
+  padding:27px 0 84px;
+  border-top:1px solid rgba(64,133,133,.18);
+  background:linear-gradient(180deg,#06161b 0%,#07131a 100%);
+}
+.page-home-refresh .home-refresh-final{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:36px;
+  border:1px solid rgba(64,143,134,.5);
+  border-radius:26px;
+  padding:35px clamp(26px,4vw,54px);
+  background:
+    radial-gradient(ellipse at 100% 20%,rgba(55,188,150,.14),transparent 48%),
+    linear-gradient(155deg,#0b3034 0%,#0a2029 100%);
+}
+.page-home-refresh .home-refresh-final-content{max-width:650px}
+.page-home-refresh .home-refresh-final h2{
+  max-width:620px;
+  margin:10px 0 12px;
+  font-size:clamp(1.8rem,2.6vw,2.55rem);
+  line-height:1.2;
+  letter-spacing:-.045em;
+  font-weight:790;
+  text-wrap:balance;
+}
+.page-home-refresh .home-refresh-final p{
+  max-width:640px;
+  margin:0;
+  color:#bad0d0;
+  font-size:.98rem;
+  line-height:1.6;
+}
+.page-home-refresh .home-refresh-final>.btn{
+  flex:0 0 auto;
+  min-height:49px;
+  text-align:center;
+}
+.page-home-refresh .footer{background:#07131a}
+.page-home-refresh .home-refresh-offer-card:focus-visible,
+.page-home-refresh .home-refresh-final>.btn:focus-visible,
+.page-home-refresh .home-refresh-actions .btn:focus-visible{
+  outline:3px solid var(--cyan);
+  outline-offset:4px;
+}
+@media (max-width:1040px){
+  .page-home-refresh .home-refresh-hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);
+    gap:20px;
+  }
+  .page-home-refresh .home-refresh-intro h1{font-size:clamp(2.75rem,4.7vw,3.7rem)}
+  .page-home-refresh .home-refresh-art{height:310px}
+  .page-home-refresh .home-refresh-offer-grid{gap:12px}
+  .page-home-refresh .home-refresh-offer-card{padding:22px}
+  .page-home-refresh .home-refresh-offer-card h3{font-size:1.15rem}
+}
+@media (max-width:760px){
+  .page-home-refresh .home-refresh-hero{padding:55px 0 52px}
+  .page-home-refresh .home-refresh-hero-grid{grid-template-columns:1fr;gap:10px}
+  .page-home-refresh .home-refresh-intro h1{
+    font-size:clamp(2.6rem,10.8vw,3.65rem);
+    margin:17px 0 18px;
+  }
+  .page-home-refresh .home-refresh-intro .lead{font-size:1.07rem}
+  .page-home-refresh .home-refresh-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    margin-top:23px;
+  }
+  .page-home-refresh .home-refresh-actions .btn{justify-content:center;text-align:center}
+  .page-home-refresh .home-refresh-promise{font-size:.78rem}
+  .page-home-refresh .home-refresh-art{
+    width:min(100%,435px);
+    height:240px;
+    max-height:240px;
+    margin:17px auto 0;
+    justify-self:center;
+  }
+  .page-home-refresh .home-refresh-art-panel{border-radius:18px}
+  .page-home-refresh .home-refresh-art-panel-mark{margin:16px 0 0 17px;height:4px}
+  .page-home-refresh .home-refresh-art-bars{margin:7px 20px 11px;gap:7px}
+  .page-home-refresh .home-refresh-art-lines{margin-left:20px;gap:5px}
+  .page-home-refresh .home-refresh-art-lines i{height:4px}
+  .page-home-refresh .home-refresh-art-micro-bars{margin:0 17px 12px;height:22px}
+  .page-home-refresh .home-refresh-offers{padding:49px 0 46px}
+  .page-home-refresh .home-refresh-section-intro h2{font-size:clamp(1.55rem,6vw,2rem)}
+  .page-home-refresh .home-refresh-offer-grid{grid-template-columns:1fr;gap:13px}
+  .page-home-refresh .home-refresh-offer-card{min-height:0;padding:25px 24px}
+  .page-home-refresh .home-refresh-offer-card h3{font-size:1.26rem}
+  .page-home-refresh .home-refresh-offer-card p{max-width:100%}
+  .page-home-refresh .home-refresh-trust{grid-template-columns:1fr;gap:15px;margin-top:29px}
+  .page-home-refresh .home-refresh-closing{padding:18px 0 56px}
+  .page-home-refresh .home-refresh-final{flex-direction:column;align-items:stretch;gap:26px;padding:28px 24px}
+  .page-home-refresh .home-refresh-final h2{font-size:clamp(1.7rem,6.7vw,2.2rem)}
+  .page-home-refresh .home-refresh-final>.btn{width:100%;justify-content:center}
+}
+@media (max-width:420px){
+  .page-home-refresh .home-refresh-intro h1{font-size:clamp(2.32rem,10.4vw,2.75rem)}
+  .page-home-refresh .home-refresh-art{height:205px}
+}
+@media(prefers-reduced-motion:reduce){
+  .page-home-refresh .home-refresh-offer-card,
+  .page-home-refresh .home-refresh-card-link span{transition:none}
+}
+</style>
 </head>
 <body class="page-home-refresh">
 <header class="site-header"><div class="wrap nav"><a aria-label="AIHub.ro — Home" class="brand" href="ro/">AI<span>Hub</span>.ro</a><button aria-controls="primary-navigation" aria-expanded="false" aria-label="Deschide meniul" class="menu-btn aiat-menu-trigger" type="button">Meniu</button><nav aria-label="Navigație principală" class="nav-links aiat-menu" id="primary-navigation"><a href="ro/ai-at-work/">AI at Work</a><a href="ro/practical-ai-for-management/">AI pentru Management</a><a href="ro/ai-workflow-automation/">AI Automation</a><a href="ro/management-reporting-power-bi/">Reporting &amp; Power BI</a><a href="ro/despre/">Despre AIHub</a><div aria-label="Limbă" class="lang-switch" role="group"><a aria-label="English" href="index.html" lang="en">EN</a><a aria-current="true" aria-label="Română" class="active" href="ro/" lang="ro">RO</a></div><a class="nav-cta" href="https://cal.com/bogdan-apetri-kcqvbj/aihub-20min" rel="noopener noreferrer" target="_blank">Discutăm 20 min</a></nav></div></header>
@@ -47,7 +468,7 @@
       </div>
       <div class="home-refresh-art-panel home-refresh-art-panel-front" aria-hidden="true">
         <span class="home-refresh-art-panel-mark"></span>
-        <svg viewBox="0 0 160 160" role="presentation" focusable="false">
+        <svg width="160" height="160" viewBox="0 0 160 160" role="presentation" focusable="false">
           <circle cx="80" cy="80" r="47" fill="none" stroke="rgba(157,249,212,.16)" stroke-width="24"></circle>
           <circle cx="80" cy="80" r="47" fill="none" stroke="rgba(127,248,194,.9)" stroke-width="24" stroke-dasharray="169 296" transform="rotate(-90 80 80)"></circle>
           <circle cx="80" cy="80" r="47" fill="none" stroke="rgba(79,211,215,.62)" stroke-width="24" stroke-dasharray="83 296" stroke-dashoffset="-176" transform="rotate(-90 80 80)"></circle>
@@ -67,28 +488,28 @@
     </div>
     <div class="home-refresh-offer-grid">
       <a class="home-refresh-offer-card" href="ro/practical-ai-for-management/">
-        <span class="home-refresh-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V11M10 20V6M16 20v-9M22 20V4"/><path d="M2 20h20"/></svg></span>
+        <span class="home-refresh-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V11M10 20V6M16 20v-9M22 20V4"/><path d="M2 20h20"/></svg></span>
         <h3>AI pentru Management</h3>
         <p>Un mod de lucru mai clar și mai util cu AI pentru echipa ta.</p>
         <span class="home-refresh-card-link">Explorează programul <span aria-hidden="true">→</span></span>
       </a>
       <a class="home-refresh-offer-card" href="ro/ai-workflow-automation/">
-        <span class="home-refresh-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 2 4.7 13h6.6L10.9 22l8.4-12h-7l.2-8z"/></svg></span>
+        <span class="home-refresh-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 2 4.7 13h6.6L10.9 22l8.4-12h-7l.2-8z"/></svg></span>
         <h3>AI &amp; Automatizări</h3>
         <p>Mai puțini pași manuali în procesele care se repetă.</p>
         <span class="home-refresh-card-link">Vezi cum lucrăm <span aria-hidden="true">→</span></span>
       </a>
       <a class="home-refresh-offer-card" href="ro/management-reporting-power-bi/">
-        <span class="home-refresh-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/></svg></span>
+        <span class="home-refresh-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/></svg></span>
         <h3>Reporting &amp; Power BI</h3>
         <p>Indicatori clari și informații de management gata de folosit.</p>
         <span class="home-refresh-card-link">Explorează serviciul <span aria-hidden="true">→</span></span>
       </a>
     </div>
     <ul class="home-refresh-trust" aria-label="Principiile de lucru AIHub">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.6 4.6L19.5 6.8"/></svg><span>Practic, nu doar teoretic</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.6 4.6L19.5 6.8"/></svg><span>Orientat către rezultate</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.6 4.6L19.5 6.8"/></svg><span>Adaptat la contextul firmei tale</span></li>
+      <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.6 4.6L19.5 6.8"/></svg><span>Practic, nu doar teoretic</span></li>
+      <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.6 4.6L19.5 6.8"/></svg><span>Orientat către rezultate</span></li>
+      <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.6 4.6L19.5 6.8"/></svg><span>Adaptat la contextul firmei tale</span></li>
     </ul>
   </div>
 </section>
@@ -105,6 +526,6 @@
   </div>
 </section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><div>AIHub.ro — Practical AI · Automation · Management Reporting · Power BI</div><div class="footer-links"><a href="mailto:bogdan@aihub.ro">bogdan@aihub.ro</a><a href="ro/despre/">Despre AIHub</a></div></div></footer><script src="site.js?v=visual-26"></script>
+<footer class="footer"><div class="wrap footer-inner"><div>AIHub.ro — Practical AI · Automation · Management Reporting · Power BI</div><div class="footer-links"><a href="mailto:bogdan@aihub.ro">bogdan@aihub.ro</a><a href="ro/despre/">Despre AIHub</a></div></div></footer><script src="site.js?v=visual-27"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ if(menu&&links){
 }
 
 (()=>{
-  const version='visual-26';
+  const version='visual-27';
   if(document.documentElement.dataset.aihubVisual===version)return;
   document.documentElement.dataset.aihubVisual=version;
   ['01.css','02.css','03.css','04.css','05.css','06.css','07.css','08.css','09.css','10.css'].forEach(file=>{
@@ -46,12 +46,9 @@ if(menu&&links){
   document.body.dataset.aihubPage=page;
   // Preview-only Romanian homepage design; keep the existing EN/home runtime unchanged.
   const freshRoHome=page==='home' && document.body.classList.contains('page-home-refresh');
-  if(freshRoHome){
-    const freshStyles=document.createElement('link');
-    freshStyles.rel='stylesheet';
-    freshStyles.href=new URL(`visuals/home-refresh.css?v=${version}`,document.baseURI).href;
-    document.head.appendChild(freshStyles);
-  }else{
+  // RO homepage preview styles are embedded in its HTML head so the layout renders
+  // reliably before JS and cannot lose SVG constraints during a preview CDN cache miss.
+  if(!freshRoHome){
     const script=document.createElement('script');
     script.src=new URL(`visuals/${page}.js?v=${version}`,document.baseURI).href;
     script.async=false;
