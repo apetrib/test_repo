@@ -1,0 +1,41 @@
+/* v3 content layout, using existing AIHub type, colour and surface tokens. */
+[data-approved-copy] .hero-grid{grid-template-columns:minmax(0,1.45fr) minmax(280px,.65fr);gap:48px}
+[data-approved-copy] h1{font-size:clamp(2.8rem,4.6vw,4.6rem);line-height:1.06}
+[data-approved-copy] .hero-support{margin-top:20px}
+[data-approved-copy] .approved-decoration{min-height:340px}
+[data-approved-copy] .approved-decoration .orbit.o1{width:260px;height:260px;left:50%;top:50%;transform:translate(-50%,-50%)}
+[data-approved-copy] .approved-decoration .orbit.o2{width:190px;height:190px;left:50%;top:50%;transform:translate(-50%,-50%)}
+[data-approved-copy] .approved-decoration .core{left:50%;top:50%;transform:translate(-50%,-50%);right:auto}
+[data-approved-copy] .section-head{grid-template-columns:1.1fr .9fr;align-items:center}
+[data-approved-copy] .section-head h2{font-size:clamp(1.95rem,3vw,2.8rem)}
+[data-approved-copy] .approved-items,[data-approved-copy] .approved-metrics{list-style:none;padding:0;margin:0}
+[data-approved-copy] .approved-items>*{min-width:0}
+[data-approved-copy] .approved-items h3{overflow-wrap:break-word}
+[data-approved-copy] .approved-items p{margin:12px 0 0}
+[data-approved-copy] .offer_cards .family{min-height:260px}
+[data-approved-copy] .offer_cards .btn{margin-top:26px}
+[data-approved-copy] .supporting-capability{grid-template-columns:170px minmax(0,1fr);max-width:980px;padding:20px 24px}
+[data-approved-copy] .supporting-capability h3{font-size:1.15rem}
+[data-approved-copy] .supporting-capability .btn{margin-top:12px}
+[data-approved-copy] .story{max-width:82ch;font-size:1.12rem;margin:0}
+[data-approved-copy] .workflow-diagram .step p{color:var(--muted)}
+[data-approved-copy] .workflow-diagram .step h3{font-size:1.12rem}
+[data-approved-copy] .btn-link::after{content:none}
+.nav-links{max-height:calc(100dvh - 76px);overflow-y:auto}
+.nav-links a:focus-visible,.menu-btn:focus-visible{outline-offset:-3px}
+@media(max-width:1040px){.nav-links{top:76px}}
+@media(max-width:980px){
+  [data-approved-copy] .hero-grid,[data-approved-copy] .section-head{grid-template-columns:1fr;gap:24px}
+  [data-approved-copy] .approved-decoration{display:none}
+  [data-approved-copy] .workflow-diagram{grid-template-columns:repeat(2,minmax(0,1fr))}
+  [data-approved-copy] .workflow-diagram .step:nth-child(2)::after{display:none}
+}
+@media(max-width:760px){
+  .nav-links{top:68px;max-height:calc(100dvh - 68px)}
+  [data-approved-copy] h1{font-size:clamp(2.5rem,10.6vw,3.5rem)}
+  [data-approved-copy] .supporting-capability,[data-approved-copy] .workflow-diagram{grid-template-columns:1fr}
+  [data-approved-copy] .supporting-capability{padding:20px;gap:10px}
+  [data-approved-copy] .workflow-diagram .step:nth-child(2)::after{display:block}
+  [data-approved-copy] .card{padding:22px}
+  [data-approved-copy] .offer_cards .family{min-height:0}
+}
