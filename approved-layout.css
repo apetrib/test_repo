@@ -2,6 +2,7 @@
 [data-approved-copy] .hero-grid{grid-template-columns:minmax(0,1.45fr) minmax(280px,.65fr);gap:48px}
 [data-approved-copy] h1{font-size:clamp(2.8rem,4.6vw,4.6rem);line-height:1.06}
 [data-approved-copy] .hero-support{margin-top:20px}
+[data-approved-copy] .section-context{max-width:82ch;margin:0 0 24px}
 [data-approved-copy] .approved-decoration{min-height:340px}
 [data-approved-copy] .approved-decoration .orbit.o1{width:260px;height:260px;left:50%;top:50%;transform:translate(-50%,-50%)}
 [data-approved-copy] .approved-decoration .orbit.o2{width:190px;height:190px;left:50%;top:50%;transform:translate(-50%,-50%)}
