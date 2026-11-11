@@ -40,3 +40,33 @@
   [data-approved-copy] .card{padding:22px}
   [data-approved-copy] .offer_cards .family{min-height:0}
 }
+
+/* Founder-approved top navigation: always visible, automation first. */
+.site-header .wrap.nav{width:calc(100% - 88px);max-width:none;min-height:80px;height:auto;gap:28px}
+.site-header .brand{font-size:1.6rem;min-height:44px;display:inline-flex;align-items:center}
+.site-header .nav-links{display:flex;position:static;flex-direction:row;align-items:center;gap:28px;padding:0;background:none;border:0;max-height:none;overflow:visible}
+.site-header .nav-services,.site-header .header-actions{display:flex;align-items:center;gap:28px}
+.site-header .nav-links a{font-size:1rem;white-space:nowrap;min-height:44px;padding:0}
+.site-header .nav-links .nav-cta{padding:12px 18px;min-height:52px;border-radius:14px;justify-content:center}
+.site-header .lang-switch{margin:0;align-self:auto;padding:5px;min-height:62px;border-radius:16px}
+.site-header .lang-switch a{min-width:50px;min-height:50px;height:50px;justify-content:center;font-size:.88rem;border-radius:11px}
+@media(max-width:1200px){
+  .site-header .wrap.nav{width:calc(100% - 40px);display:grid;grid-template-columns:auto 1fr;gap:0 20px;padding:10px 0}
+  .site-header .nav-links{display:contents}
+  .site-header .header-actions{grid-column:2;grid-row:1;justify-content:flex-end;gap:16px}
+  .site-header .nav-services{grid-column:1/-1;grid-row:2;justify-content:center;gap:28px;padding-top:6px}
+  .site-header .nav-services a{font-size:.95rem!important}
+  .site-header .lang-switch{min-height:50px;padding:3px;border-radius:12px}
+  .site-header .lang-switch a{min-width:44px;height:44px;min-height:44px}
+  .site-header .nav-links .nav-cta{min-height:48px;font-size:.9rem!important}
+}
+@media(max-width:600px){
+  .site-header{position:relative}
+  .site-header .wrap.nav{width:calc(100% - 28px);gap:0 8px}
+  .site-header .brand{font-size:1.3rem}
+  .site-header .header-actions{gap:8px}
+  .site-header .nav-links .nav-cta{padding:10px;font-size:.8rem!important;border-radius:11px}
+  .site-header .nav-services{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;width:100%}
+  .site-header .nav-services a{white-space:normal;justify-content:center;text-align:center;font-size:.87rem!important;padding:6px 0}
+  .site-header .lang-switch a{min-width:36px;padding:0 7px!important;font-size:.75rem!important}
+}
